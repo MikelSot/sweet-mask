@@ -39,7 +39,6 @@ yarn.lock
 .idea
 /.vscode
 
-
 # local env files
 .env.local
 .env.development.local
