@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    @apply box-border;
+    @apply text-gray-100;
+    @apply bg-primary-700;
+    // @apply bg-gray-100;
+    // @apply max-w-screen-2xl;
+  }
+}
+
+.responsive-screen-width {
+  @apply px-4 md:px-12 lg:px-28 xl:px-60;
+}
+
+.responsive-screen-height {
+  @apply py-10 md:py-20 lg:py-20 xl:py-20;
+}
+
+.responsive-screen-gap {
+  @apply gap-8 md:gap-14;
+}

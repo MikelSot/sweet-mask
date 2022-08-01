@@ -19,7 +19,6 @@
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "next": "12.1.5",
-    "node-sass": "5.0.0",
     "querystring": "^0.2.1",
     "react": "18.0.0",
     "react-day-picker": "^7.4.10",
@@ -31,6 +30,7 @@
     "react-redux": "^7.2.5",
     "react-syntax-highlighter": "^15.4.4",
     "react-use": "^17.3.1",
+    "sass": "^1.52.3",
     "swiper": "^7.3.1",
     "swr": "^1.0.1",
     "use-media": "^1.4.0"
