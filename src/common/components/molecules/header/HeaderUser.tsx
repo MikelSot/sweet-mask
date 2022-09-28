@@ -80,7 +80,7 @@ const HeaderUser = (props: Props) => {
   const { isUserLogin, onChangleLogout } = useUser()
 
   return (
-    <header className="sticky top-0 bg-white h-20 flex items-center justify-between p-8 border-b border-gray-300">
+    <header className="sticky top-0 bg-white text-primary-700 h-20 flex items-center justify-between p-8 border-b border-gray-300 z-10">
       <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"

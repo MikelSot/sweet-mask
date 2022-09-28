@@ -1,10 +1,17 @@
 import Banner from '@components/templates/banner'
-import GridList from '@components/templates/gridList'
+import GridList from '@components/templates/gridList/index'
 import Section from '@components/templates/section'
 import { useServices } from 'mock2/context/service.context'
 
 const ServiceView = () => {
   const { services }: any = useServices()
+
+  const newArrService: any = [
+    {
+      id: 1,
+      items: [...services.slice(0, 5)]
+    }
+  ]
 
   return (
     <>
@@ -18,17 +25,12 @@ const ServiceView = () => {
       />
 
       <Section
-        className={
-          'text-primary-700 grid responsive-screen-height responsive-screen-gap bg-gray-100'
-        }
+        className={'text-primary-700 grid responsive-screen-height responsive-screen-gap bg-white'}
         title={'SERVICIOS EN OFERTA'}
         typeGallery={'slider'}
-        data={services.slice(0, 6)}
+        data={newArrService}
       />
-      <section className="grid responsive-screen-height responsive-screen-gap bg-gray-100">
-        <h2 className="text-xl font-bold text-center">SERVICIOS EN OFERTA</h2>
-        <section className="w-full h-52 bg-blue-300">Slider 2</section>
-      </section>
+
       {/* LISTA NUESTROS SERVICIOS */}
       <GridList title={'LISTA DE NUESTROS SERVICIOS'} data={services} />
     </>

@@ -39,14 +39,20 @@ const ITEMS_NAVLINK = [
   }
 ]
 
-function NavLink({ to, children, styles, onClick }: any) {
+function NavLink({ to, children, styles, onClick, isInitialTop }: any) {
   const { pathname } = useRouter()
 
   return (
     <li>
       <Link href={to}>
         <a
-          className={`${styles} ${pathname === to ? 'border-b-2 font-bold border-gray-100' : ''}`}
+          className={`${styles} ${
+            pathname === to
+              ? 'border-b-2 font-bold'
+              : isInitialTop
+              ? 'border-gray-100'
+              : 'border-primary-700'
+          }`}
           onClick={onClick}
         >
           {children}
@@ -112,47 +118,12 @@ type Props = {}
 
 const Header = (props: Props) => {
   const [open, setOpen] = useState(false)
-  const [colorChange, setColorChange] = useState(false)
   const [isScrollBody, setIsScrollBody] = useState(false)
+  const [typeModal, setTypeModal] = useState('login')
   const [isModalLogin, setIsModalLogin] = useState(false)
+  const [isInitialTop, setIsInitialTop] = useState(true)
 
   const hookModal = useToggleModal()
-
-  // const changeNavbarColor = () => {
-  //   let ubication_now = window.pageYOffset
-  //   let distance_now = window.pageYOffset
-
-  //   if (ubication_now >= distance_now) {
-  //     console.log('subida', window.pageYOffset)
-
-  //     setIsScrollBody(false)
-  //   } else {
-  //     console.log('bajada', window.pageYOffset)
-  //     setIsScrollBody(true)
-  //   }
-
-  //   ubication_now = distance_now
-
-  //   // let lastScrollTop = 0
-
-  //   // let st = window.pageYOffset || document.documentElement.scrollTop
-
-  //   // if (st > lastScrollTop) {
-  //   //   // downscroll code
-  //   //   setIsScrollBody(true)
-  //   // } else {
-  //   //   // upscroll code
-  //   //   setIsScrollBody(false)
-  //   // }
-  //   // lastScrollTop = st <= 0 ? 0 : st
-
-  //   // // if (window.scrollY >= 80) {
-  //   // //   // 80
-  //   // //   setColorChange(true)
-  //   // // } else {
-  //   // //   setColorChange(false)
-  //   // // }
-  // }
 
   useEffect(() => {
     let ubication_now = window.pageYOffset
@@ -160,12 +131,15 @@ const Header = (props: Props) => {
     const changeNavbarColor = () => {
       let distance_now = window.pageYOffset
 
-      if (ubication_now >= distance_now) {
-        console.log('subida', window.pageYOffset)
+      if (distance_now <= 100) {
+        setIsInitialTop(false)
+      } else {
+        setIsInitialTop(true)
+      }
 
+      if (ubication_now >= distance_now) {
         setIsScrollBody(false)
       } else {
-        console.log('bajada', window.pageYOffset)
         setIsScrollBody(true)
       }
 
@@ -173,14 +147,18 @@ const Header = (props: Props) => {
     }
 
     window.addEventListener('scroll', changeNavbarColor)
-    // return () => window.removeEventListener('scroll', changeNavbarColor)
+    return () => window.removeEventListener('scroll', changeNavbarColor)
   })
 
   return (
     <>
       <header
-        className={`w-full h-28 responsive-screen-width fixed top-0 left-0 right-0 text-gray-100 grid ${
-          isScrollBody ? '-top-40' : 'top-0'
+        className={`w-full h-28 responsive-screen-width fixed top-0 left-0 right-0 grid z-10 ${
+          isScrollBody
+            ? '-top-40'
+            : isInitialTop
+            ? 'top-0 bg-white text-primary-700'
+            : 'top-0 bg-transparent text-gray-100'
         } 
         `}
         //
@@ -198,7 +176,7 @@ const Header = (props: Props) => {
                 {ITEMS_NAVLINK.map(item => {
                   const { id, name, link } = item
                   return (
-                    <NavLink key={id} to={link}>
+                    <NavLink key={id} to={link} isInitialTop={isInitialTop}>
                       {name}
                     </NavLink>
                   )

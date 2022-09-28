@@ -1,44 +1,56 @@
-const dataVerifyReserve = [
-  {
-    id: 1,
-    name: 'Taller',
-    valor: 'San Vicente - Cañete'
-  },
-  {
-    id: 2,
-    name: 'Servicio',
-    valor: 'Cambio de aceite'
-  },
-  {
-    id: 3,
-    name: 'Tipo de vehiculo',
-    valor: 'Nuevo'
-  },
-  {
-    id: 4,
-    name: 'Recojo a domicilio',
-    valor: 'No'
-  },
-  {
-    id: 5,
-    name: 'Descripción',
-    valor: 'El vehiculo necesita cambio de aceite.'
-  },
-  {
-    id: 6,
-    name: 'Fecha',
-    valor: '12/06/2022'
-  },
-  {
-    id: 7,
-    name: 'Hora',
-    valor: '02 : 00 P.M.'
-  }
-]
+import { useCreateAppointment } from '@hooks/useCreateAppointment'
 
-type Props = {}
+type Props = {
+  formCreateAppointment: any
+}
 
 const ReserveView = (props: Props) => {
+  const { handleChange } = useCreateAppointment()
+  // workshop: '',
+  // service: '',
+  // typeVehicle: '',
+  // pickUpHome: '',
+  // description: '',
+  // date: '',
+  // hour: ''
+  const dataVerifyReserve = [
+    {
+      id: 1,
+      name: 'Taller',
+      valor: props.formCreateAppointment.workshop
+    },
+    {
+      id: 2,
+      name: 'Servicio',
+      valor: props.formCreateAppointment.service
+    },
+    {
+      id: 3,
+      name: 'Tipo de vehiculo',
+      valor: props.formCreateAppointment.typeVehicle
+    },
+    {
+      id: 4,
+      name: 'Recojo a domicilio',
+      valor: props.formCreateAppointment.pickUpHome
+    },
+    {
+      id: 5,
+      name: 'Descripción',
+      valor: props.formCreateAppointment.description
+    },
+    {
+      id: 6,
+      name: 'Fecha',
+      valor: props.formCreateAppointment.date
+    },
+    {
+      id: 7,
+      name: 'Hora',
+      valor: props.formCreateAppointment.hour
+    }
+  ]
+
   return (
     <>
       <section className="grid gap-2">

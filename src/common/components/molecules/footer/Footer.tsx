@@ -37,17 +37,17 @@ const FOOTER_NOSOTROS = {
     {
       id: 1,
       nombre: '¿Qué es AUTOPRO?',
-      link: '#!'
+      link: '/nosotros'
     },
     {
       id: 2,
       nombre: 'Nuestro equipo',
-      link: '#!'
+      link: '/nosotros'
     },
     {
       id: 3,
       nombre: 'Visión y misión',
-      link: '#!'
+      link: '/nosotros'
     }
   ]
 }
@@ -59,22 +59,22 @@ const FOOTER_ENLACES = {
     {
       id: 1,
       nombre: 'Inicio',
-      link: '#!'
+      link: ''
     },
     {
       id: 2,
       nombre: 'Servicios',
-      link: '#!'
+      link: '/servicios'
     },
     {
       id: 3,
       nombre: 'Productos',
-      link: '#!'
+      link: '/productos'
     },
     {
       id: 4,
       nombre: 'Reserva de cita',
-      link: '#!'
+      link: '/cita'
     }
   ]
 }

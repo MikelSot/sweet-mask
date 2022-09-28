@@ -1,3 +1,5 @@
+import Banner from '@components/templates/banner'
+import { useUser } from '@hooks/useUser'
 import Link from 'next/link'
 
 const itemsValores = [
@@ -338,19 +340,27 @@ const itemsTaller = [
 type Props = {}
 
 const AboutView = (props: Props) => {
+  const { isUserLogin } = useUser()
+
   return (
     <>
       {/* BANNER */}
-      <section className="w-full h-80 md:min-h-[27rem] pt-28 pb-10 md:pb-16 bg-gradient-to-tr from-primary-600 to-primary-800 grid place-items-center responsive-screen-width">
-        <div className="grid gap-6">
-          <h1 className="text-gray-100 text-center text-xl md:text-3xl md:text-start lg:text-4xl font-bold">
-            SOBRE NOSOTROS
-          </h1>
-          <div className="w-3/6 m-auto flex-grow border-t-2 border-gray-100"></div>
-        </div>
-      </section>
+      <Banner
+        isHome={false}
+        className={
+          'w-full h-80 md:min-h-[27rem] pt-28 pb-10 md:pb-16 bg-gradient-to-tr from-primary-600 to-primary-800 grid place-items-center responsive-screen-width'
+        }
+        title="SOBRE NOSOTROS"
+      />
+
       {/* SOBRE LA EMPRESA */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 responsive-screen-width responsive-screen-height">
+      <section
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-primary-700 ${
+          !isUserLogin
+            ? 'responsive-screen-width responsive-screen-height bg-white'
+            : 'responsive-screen-height-user bg-transparent'
+        }`}
+      >
         <div className="lg:col-span-1 rounded-xl overflow-hidden">
           <img
             alt="gallery"
@@ -358,7 +368,7 @@ const AboutView = (props: Props) => {
             src="/imagenes/nosotros/nosotros-mecanico.png"
           />
         </div>
-        <div className="bg-primary-200 p-6 md:p-8 lg:col-span-2 rounded-xl overflow-hidden">
+        <div className="bg-primary-200 border border-primary-300 p-6 md:p-8 lg:col-span-2 rounded-xl overflow-hidden">
           <p className="text-lg md:text-xl font-bold">AUTOPRO</p>
           <p className="pt-2">
             Somos una empresa peruana dedicada al rubro automotriz, que brinda servicios como
@@ -366,7 +376,7 @@ const AboutView = (props: Props) => {
             general.
           </p>
         </div>
-        <div className="bg-yellow-100 p-6 md:p-8 lg:col-span-2 rounded-xl overflow-hidden">
+        <div className="bg-yellow-100 border border-yellow-300 p-6 md:p-8 lg:col-span-2 rounded-xl overflow-hidden">
           <p className="text-lg md:text-xl font-bold">MISIÓN Y VISIÓN</p>
           <p className="pt-2">
             Nuestra misión es brindar un buen servicio, conservando los autos de nuestros clientes
@@ -379,7 +389,7 @@ const AboutView = (props: Props) => {
             una mayor eficiencia en el servicio.
           </p>
         </div>
-        <div className="bg-green-100 p-6 md:p-8 lg:col-span-1 rounded-xl overflow-hidden">
+        <div className="bg-green-100 border border-green-300 p-6 md:p-8 lg:col-span-1 rounded-xl overflow-hidden">
           <p className="text-lg md:text-xl font-bold">VALORES</p>
           {itemsValores.map(item => {
             const { id, name } = item
@@ -401,13 +411,17 @@ const AboutView = (props: Props) => {
         <div className="w-full h-8 bg-blue-300"></div>
       </section>
       {/* NUESTRAS SUCURSALES */}
-      <section className="grid responsive-screen-height responsive-screen-gap">
+      <section
+        className={`grid responsive-screen-height responsive-screen-gap text-primary-700 ${
+          !isUserLogin ? 'bg-white' : 'bg-transparent'
+        }`}
+      >
         <div className="w-full grid gap-2">
           <h2 className="text-xl font-bold text-center">CONOCE NUESTRAS SUCURSALES</h2>
           <p className="text-center">Puedes elegir entre todas nuestras sucursales</p>
         </div>
 
-        <section className="w-full grid grid-cols-5 gap-5">
+        <section className={`w-full grid grid-cols-5 gap-5`}>
           {itemsTaller.map(item => {
             const { id, nombre, image, link } = item
             return (
@@ -424,7 +438,13 @@ const AboutView = (props: Props) => {
         </section>
       </section>
       {/* NUESTRO EQUIPO */}
-      <section className="grid responsive-screen-gap responsive-screen-width responsive-screen-height">
+      <section
+        className={`grid responsive-screen-gap text-primary-700 ${
+          !isUserLogin
+            ? 'responsive-screen-width responsive-screen-height bg-white'
+            : 'responsive-screen-height-user bg-transparent'
+        }`}
+      >
         <div className="grid gap-2">
           <h2 className="text-xl font-bold text-center">CONOCE A NUESTRO EQUIPO</h2>
           <p className="text-center">Profesionales a cargo de los servicios</p>

@@ -1,12 +1,13 @@
 import { useState } from 'react'
 
 type Props = {
-  setFormAppointment: any
   handleChange: any
+  formCreateAppointment: any
 }
 
 const DataView = (props: Props) => {
   const [isCheckboxForm, setIsCheckboxForm] = useState(false)
+
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
       <img
@@ -36,14 +37,16 @@ const DataView = (props: Props) => {
             <div className="inline-block relative w-full">
               <select
                 className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-primary-80 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-200 rounded transition ease-in-out m-0 focus:text-primary-800 focus:bg-white focus:border-primary-500 focus:outline-none"
-                aria-label="Select service"
+                name="workshop"
+                value={props.formCreateAppointment.workshop}
+                onChange={props.handleChange}
               >
                 <option value="default" selected disabled>
                   Seleccione un taller
                 </option>
-                <option value="1">Mala - Cañete</option>
-                <option value="2">San Vicente - Cañete</option>
-                <option value="3">Asia - Cañete</option>
+                <option value="Mala - Cañete">Mala - Cañete</option>
+                <option value="San Vicente - Cañete">San Vicente - Cañete</option>
+                <option value="Asia - Cañete">Asia - Cañete</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-800">
                 <svg
@@ -61,15 +64,17 @@ const DataView = (props: Props) => {
           <div className="inline-block relative w-full">
             <select
               className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-primary-80 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-200 rounded transition ease-in-out m-0 focus:text-primary-800 focus:bg-white focus:border-primary-500 focus:outline-none"
-              aria-label="Select service"
+              name="service"
+              value={props.formCreateAppointment.service}
+              onChange={props.handleChange}
             >
               <option value="default" selected disabled>
                 Seleccione un servicio
               </option>
-              <option value="1">Cambio de aceite</option>
-              <option value="2">Cambio de motor</option>
-              <option value="3">Lavado</option>
-              <option value="4">Mantenimiento</option>
+              <option value="Cambio de aceite">Cambio de aceite</option>
+              <option value="Cambio de motor">Cambio de motor</option>
+              <option value="Lavado">Lavado</option>
+              <option value="Mantenimiento">Mantenimiento</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-800">
               <svg
@@ -86,14 +91,16 @@ const DataView = (props: Props) => {
           <div className="inline-block relative w-full">
             <select
               className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-primary-80 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-200 rounded transition ease-in-out m-0 focus:text-primary-800 focus:bg-white focus:border-primary-500 focus:outline-none"
-              aria-label="Select service"
+              name="typeVehicle"
+              value={props.formCreateAppointment.typeVehicle}
+              onChange={props.handleChange}
             >
               <option selected disabled>
                 Tipo de vehículo
               </option>
-              <option value="1">Nuevo</option>
-              <option value="2">Antiguo</option>
-              <option value="3">Usado</option>
+              <option value="Nuevo">Nuevo</option>
+              <option value="Antiguo">Antiguo</option>
+              <option value="Usado">Usado</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-800">
               <svg
@@ -110,13 +117,15 @@ const DataView = (props: Props) => {
           <div className="inline-block relative w-full">
             <select
               className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-primary-800 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-200 rounded transition ease-in-out m-0 focus:text-primary-800 focus:bg-white focus:border-primary-500 focus:outline-none"
-              aria-label="Select service"
+              name="pickUpHome"
+              value={props.formCreateAppointment.pickUpHome}
+              onChange={props.handleChange}
             >
               <option selected disabled>
                 Recojo a domicilio
               </option>
-              <option value="1">Si</option>
-              <option value="2">No</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-800">
               <svg
@@ -131,10 +140,13 @@ const DataView = (props: Props) => {
         </div>
         <div className="md:col-span-2">
           <textarea
-            id="message"
+            id="description"
+            name="description"
             rows={6}
             className="block resize-none p-2.5 w-full text-primary-800 bg-gray-200 rounded border border-gray-200 placeholder-primary-800 focus:text-primary-800 focus:bg-white focus:border-primary-500 focus:outline-none"
             placeholder="Descripción"
+            value={props.formCreateAppointment.description}
+            onChange={props.handleChange}
           ></textarea>
         </div>
       </form>

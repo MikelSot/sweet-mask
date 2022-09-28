@@ -18,7 +18,7 @@ export const AppointmentProvider = (props: Props) => {
     description: string,
     date: string,
     hour: string
-  ): void =>
+  ): any =>
     setAppointments([
       ...appointments,
       {
@@ -32,6 +32,7 @@ export const AppointmentProvider = (props: Props) => {
         hour
       }
     ])
+
   return (
     <AppointmentContext.Provider value={{ appointments, createAppointment }}>
       {props.children}

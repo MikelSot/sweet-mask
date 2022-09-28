@@ -1,3 +1,4 @@
+import { useUser } from '@hooks/useUser'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,8 +13,10 @@ type Props = {
 }
 
 const index = (props: Props) => {
+  const { isUserLogin } = useUser()
+
   return (
-    <section className={props.className}>
+    <section className={`${props.className} ${isUserLogin && 'hidden'}`}>
       {props.isHome ? (
         <div className="w-full flex flex-col md:flex-row justify-between mx-auto gap-12 md:gap-0">
           <div className="w-12/12 md:w-6/12 grid text-gray-100 gap-8">

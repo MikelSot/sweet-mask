@@ -29,7 +29,7 @@ export const Layout = (props: LayoutProps) => {
             <SidebarUser className="h-screen bg-primary-800 text-gray-100 col-span-2 sticky top-0" />
             <section className="bg-gray-100 col-span-8">
               <HeaderUser />
-              <main className="p-8">{props.children}</main>
+              <main className="p-8 text-primary-700 bg-gray-100">{props.children}</main>
             </section>
           </section>
         </>

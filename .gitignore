@@ -28,12 +28,14 @@ package-lock.json
 yarn.lock
 # local env files
 .env*.local
+*.local
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
 # ide
 .idea/
@@ -44,3 +46,9 @@ yarn.lock
 .env.development.local
 .env.production.local
 
+#eslint
+.eslintcache
+6
+
+
+/.husky/

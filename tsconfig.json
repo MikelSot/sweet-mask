@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,22 +19,54 @@
     "jsx": "preserve",
     "baseUrl": "src",
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@components/*": ["common/components/*"],
-      "@atoms/*": ["common/components/atoms/*"],
-      "@molecules/*": ["common/components/molecules/*"],
-      "@organisms/*": ["common/components/organisms/*"],
-      "@constants/*": ["common/constants/*"],
-      "@contexts/*": ["common/contexts/*"],
-      "@helpers/*": ["common/helpers/*"],
-      "@hooks/*": ["common/hooks/*"],
-      "@interfaces/*": ["common/interfaces/*"],
-      "@services/*": ["common/services/*"],
-      "@api/*": ["common/api/*"],
-      "@redux/*": ["common/state/*"]
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@components/*": [
+        "common/components/*"
+      ],
+      "@atoms/*": [
+        "common/components/atoms/*"
+      ],
+      "@molecules/*": [
+        "common/components/molecules/*"
+      ],
+      "@organisms/*": [
+        "common/components/organisms/*"
+      ],
+      "@constants/*": [
+        "common/constants/*"
+      ],
+      "@contexts/*": [
+        "common/contexts/*"
+      ],
+      "@helpers/*": [
+        "common/helpers/*"
+      ],
+      "@hooks/*": [
+        "common/hooks/*"
+      ],
+      "@interfaces/*": [
+        "common/interfaces/*"
+      ],
+      "@services/*": [
+        "common/services/*"
+      ],
+      "@api/*": [
+        "common/api/*"
+      ],
+      "@redux/*": [
+        "common/state/*"
+      ]
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

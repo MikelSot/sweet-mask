@@ -1,12 +1,12 @@
 export const AppointmentData = [
   {
     id: 1,
-    workshop: 'workshop',
-    service: 'service',
-    typeVehicle: 'typeVehicle',
-    pickUpHome: 'pickUpHome',
-    description: 'description',
-    date: 'date',
-    hour: 'hour'
+    workshop: 'Mala - Cañete',
+    service: 'Cambio de aceite',
+    typeVehicle: 'Nuevo',
+    pickUpHome: 'No',
+    description: 'Sin descripción',
+    date: 'Lunes',
+    hour: '04 : 00 PM'
   }
 ]

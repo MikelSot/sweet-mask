@@ -11,7 +11,7 @@ const itemsButtons = [
       {
         id: 10,
         name: 'Inicio',
-        url: '',
+        url: '/',
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ const itemsButtons = [
       {
         id: 32,
         name: 'Talleres',
-        url: '/talleres',
+        url: '#talleres',
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -151,10 +151,12 @@ const SidebarUser = (props: Props) => {
                 {items.map(itemButton => {
                   const { id, name, url, icon } = itemButton
                   return (
-                    <Link key={id} href={`/${isUserLogin}${url}`}>
+                    // <Link key={id} href={`/${isUserLogin}${url}`}>
+                    <Link key={id} href={`${url}`}>
                       <a
                         className={`w-full py-4 pl-8 flex gap-4 items-center ${
-                          router.asPath === `/${isUserLogin}${url}`
+                          // router.asPath === `/${isUserLogin}${url}`
+                          router.asPath === `${url}`
                             ? 'bg-blue-800'
                             : 'text-gray-500 hover:bg-blue-800 hover:text-gray-100'
                         }`}

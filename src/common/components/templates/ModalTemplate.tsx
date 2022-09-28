@@ -11,7 +11,7 @@ const ModalTemplate = (props: any) => {
       <section
         className={`${
           props.isModal ? 'fixed' : 'hidden'
-        } w-full h-screen fixed top-0 left-0 transform transition duration-300 ease-in-out bg-primary-700/60 grid place-items-center`}
+        } w-full h-screen fixed top-0 left-0 transform transition duration-300 ease-in-out bg-primary-700/60 grid place-items-center text-primary-700 z-20`}
       >
         <div
           className={` ${

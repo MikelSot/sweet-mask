@@ -3,6 +3,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        sm_primary: {
+          100: '#E6F0F6',
+          200: '#D9E8F2',
+          300: '#B5D3E5',
+          400: '#95C0DA',
+          500: '#77ADCF',
+          600: '#4F95C1',
+          700: '#357197',
+          800: '#234C65'
+        },
+        sm_green: {
+          100: '#D0EDE2',
+          200: '#B9E4D4',
+          300: '#5FE0B7'
+        },
+        sm_red: { 100: '#FAD4D4', 200: '#F5A9A9', 300: '#F17E7E' },
+        sm_yellow: { 100: '#F6F5E8', 200: '#EDECD0', 300: '#E4E2B9' },
+        sm_grey: {
+          100: '#E7E7E7',
+          200: '#CDCDCD',
+          300: '#B3B3B3',
+          400: '#A2A2A2',
+          500: '#7F7F7F'
+        },
         primary: {
           100: '#F7FAFC',
           200: '#EDF2F7',

@@ -183,7 +183,6 @@ const EditPerfilCuenta = () => {
           className="w-full appearance-none border-2 border-gray-200 rounded-lg px-4 py-2 text-primary-800 leading-tight placeholder-primary-800 focus:outline-none focus:bg-white focus:border-primary-500"
           id="login-user"
           type="email"
-          // placeholder="Escriba su usuario"
         />
       </div>
       <span className="col-span-2 ">Editar contraseña:</span>
@@ -193,7 +192,6 @@ const EditPerfilCuenta = () => {
           className="w-full appearance-none border-2 border-gray-200 rounded-lg px-4 py-2 text-primary-800 leading-tight placeholder-primary-800 focus:outline-none focus:bg-white focus:border-primary-500"
           id="login-user"
           type="email"
-          // placeholder="Escriba su usuario"
         />
       </div>
       <div className="col-span-1 w-full grid gap-5">
@@ -202,7 +200,6 @@ const EditPerfilCuenta = () => {
           className="w-full appearance-none border-2 border-gray-200 rounded-lg px-4 py-2 text-primary-800 leading-tight placeholder-primary-800 focus:outline-none focus:bg-white focus:border-primary-500"
           id="login-user"
           type="email"
-          // placeholder="Escriba su usuario"
         />
       </div>
       <div className="col-span-2 flex gap-8 items-center justify-center">

@@ -1,3 +1,4 @@
+import { useUsers } from 'mock2/context/user.context'
 import { useRouter } from 'next/router'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -28,19 +29,22 @@ type Props = {}
 const ModalLogin = (props: any) => {
   const { register, handleSubmit } = useForm<IFormInput>()
   const router = useRouter()
+  const { users }: any = useUsers()
 
   const onSubmit: SubmitHandler<IFormInput> = data => {
     const { email, password } = data
 
-    const userData = userLogin.find(user => user.email === email && user.password === password)
+    const userData = users.find((user: any) => user.email === email && user.password === password)
 
     if (userData) {
       window.sessionStorage.setItem('isUserLogin', userData.uri)
+      window.sessionStorage.setItem('isUserAccess', userData.access)
       props.closeModal()
-      router.push(`/${userData.uri}`)
+      router.push(`/`)
+      return
     }
 
-    // alert('Los datos ingresados son incorrectos, verifique y vuelva a intentarlo')
+    alert('Los datos ingresados son incorrectos, verifique y vuelva a intentarlo')
   }
 
   return (
@@ -52,6 +56,7 @@ const ModalLogin = (props: any) => {
             className="w-full appearance-none border-2 border-gray-200 rounded-lg px-4 py-2 text-primary-800 leading-tight placeholder-primary-800 focus:outline-none focus:bg-white focus:border-primary-500"
             id="login-user"
             type="email"
+            defaultValue={'admin2022@gmail.com'}
             {...register('email', { required: true })}
             // placeholder="Escriba su usuario"
           />
@@ -62,6 +67,7 @@ const ModalLogin = (props: any) => {
             className="w-full appearance-none border-2 border-gray-200 rounded-lg px-4 py-2 text-primary-800 leading-tight placeholder-primary-800 focus:outline-none focus:bg-white focus:border-primary-500"
             id="login-password"
             type="password"
+            defaultValue={'admin'}
             {...register('password', { required: true })}
             // placeholder="Escriba su contraseña"
           />

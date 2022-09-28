@@ -14,11 +14,12 @@ export const ProductProvider = (props: Props) => {
     nameImage: string,
     urlImage: string = '/imagenes/productos/PBT USA Heavy Duty Wrack Wre.jpg',
     description: string,
-    price: number
+    price: number,
+    name: string
   ): void =>
     setProducts([
       ...products,
-      { id: products.length + 1 || 1, nameImage, urlImage, description, price }
+      { id: products.length + 1 || 1, nameImage, urlImage, description, price, name }
     ])
 
   const updateProduct = (id: number, updatedProduct: any) =>

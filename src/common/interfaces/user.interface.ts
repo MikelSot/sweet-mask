@@ -1,9 +1,11 @@
-import React from 'react'
+// const typeUser = [0, 1, 2]
+// numerosPares.includes(n)
 
-type Props = {}
-
-const userinterface = (props: Props) => {
-  return {}
+export interface User {
+  id: number
+  name: string
+  email: string
+  password: string
+  uri: string
+  type_user: number
 }
-
-export default userinterface
