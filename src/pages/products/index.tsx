@@ -1,9 +1,16 @@
-import React from 'react'
+import ProductView from '@modules/Products/ProductView'
+import Head from 'next/head'
 
-type Props = {}
+const ProductPage = () => {
+  return (
+    <>
+      <Head>
+        <title>AUTOPRO - PAGINA PRODUCTOS</title>
+      </Head>
 
-const ProductsPage = (props: Props) => {
-  return <div>ProductsPage</div>
+      <ProductView />
+    </>
+  )
 }
 
-export default ProductsPage
+export default ProductPage

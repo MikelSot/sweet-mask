@@ -97,7 +97,7 @@ const index = props => {
                       <div className="grid gap-6 py-6 px-6">
                         <h3 className="font-bold truncate">{name || nameImage}</h3>
                         <p>{description}</p>
-                        <Link href="/cita">
+                        <Link href="/appointment">
                           <a
                             className={`w-full m-auto text-gray-100 bg-primary-700 hover:bg-primary-800 rounded-md px-4 py-2 text-center
       `}

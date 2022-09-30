@@ -1,9 +1,18 @@
+import AboutView from '@modules/About/AboutView'
+import Head from 'next/head'
 import React from 'react'
 
 type Props = {}
 
-const AboutPage = (props: Props) => {
-  return <div>About</div>
+const index = (props: Props) => {
+  return (
+    <>
+      <Head>
+        <title>AUTOPRO - NOSOTROS</title>
+      </Head>
+      <AboutView />
+    </>
+  )
 }
 
-export default AboutPage
+export default index

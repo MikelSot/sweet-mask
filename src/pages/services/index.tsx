@@ -1,9 +1,16 @@
-import React from 'react'
+import ServiceView from '@modules/Services/ServiceView'
+import type { NextPage } from 'next'
+import Head from 'next/head'
 
-type Props = {}
-
-const ServicesPage = (props: Props) => {
-  return <div>ServicesPage</div>
+const ServicePage = () => {
+  return (
+    <>
+      <Head>
+        <title>AUTOPRO - SERVICIOS</title>
+      </Head>
+      <ServiceView />
+    </>
+  )
 }
 
-export default ServicesPage
+export default ServicePage

@@ -64,17 +64,17 @@ const FOOTER_ENLACES = {
     {
       id: 2,
       nombre: 'Servicios',
-      link: '/servicios'
+      link: '/services'
     },
     {
       id: 3,
       nombre: 'Productos',
-      link: '/productos'
+      link: '/products'
     },
     {
       id: 4,
       nombre: 'Reserva de cita',
-      link: '/cita'
+      link: '/appointment'
     }
   ]
 }
