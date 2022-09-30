@@ -13,22 +13,22 @@ export const ITEMS_NAVLINK = [
   {
     id: 2,
     name: 'Servicios',
-    link: '/servicios'
+    link: '/services'
   },
   {
     id: 3,
     name: 'Productos',
-    link: '/productos'
+    link: '/products'
   },
   {
     id: 4,
     name: 'Reserva de cita',
-    link: '/cita'
+    link: '/appointment'
   },
   {
     id: 5,
     name: 'Sobre nosotros',
-    link: '/nosotros'
+    link: '/about'
   }
 ]
 

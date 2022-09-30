@@ -1,4 +1,5 @@
 import ModalTemplate from '@components/templates/ModalTemplate'
+import { ITEMS_NAVLINK } from '@constants/items-header.constant'
 import { scrollToTop } from '@helpers/scroll-top.helper'
 import { useToggleModal } from '@hooks/useToggleModal'
 import Link from 'next/link'
@@ -11,33 +12,33 @@ const ITEM_COMPANY = {
   link: '/'
 }
 
-const ITEMS_NAVLINK = [
-  {
-    id: 1,
-    name: 'Inicio',
-    link: '/'
-  },
-  {
-    id: 2,
-    name: 'Servicios',
-    link: '/servicios'
-  },
-  {
-    id: 3,
-    name: 'Productos',
-    link: '/productos'
-  },
-  {
-    id: 4,
-    name: 'Reserva de cita',
-    link: '/cita'
-  },
-  {
-    id: 5,
-    name: 'Sobre nosotros',
-    link: '/nosotros'
-  }
-]
+// const ITEMS_NAVLINK = [
+//   {
+//     id: 1,
+//     name: 'Inicio',
+//     link: '/'
+//   },
+//   {
+//     id: 2,
+//     name: 'Servicios',
+//     link: '/servicios'
+//   },
+//   {
+//     id: 3,
+//     name: 'Productos',
+//     link: '/productos'
+//   },
+//   {
+//     id: 4,
+//     name: 'Reserva de cita',
+//     link: '/cita'
+//   },
+//   {
+//     id: 5,
+//     name: 'Sobre nosotros',
+//     link: '/nosotros'
+//   }
+// ]
 
 function NavLink({ to, children, styles, onClick, isInitialTop }: any) {
   const { pathname } = useRouter()

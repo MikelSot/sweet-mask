@@ -9,15 +9,15 @@ import { useProducts } from './../../mock2/context/product.context'
 const itemsButtonsBanner: any = [
   {
     id: 1,
-    name: 'Ver los servicios',
+    name: 'Ver productos',
     typeButton: 'secondary',
-    url: '/servicios'
+    url: '/products'
   },
   {
     id: 2,
-    name: 'Ver los productos',
+    name: 'Ver servicios',
     typeButton: 'primary',
-    url: '/productos'
+    url: '/services'
   }
 ]
 
@@ -127,12 +127,12 @@ const HomeClientView = () => {
   ]
 
   return (
-    <>
+    <div className="w-full">
       {/* BANNER */}
       <Banner
         isHome={true}
         className={
-          'w-full min-h-[35rem] pt-28 pb-20 bg-gradient-to-tr from-primary-600 to-primary-800 grid place-content-center responsive-screen-width'
+          'w-full py-40 grid place-content-center container-section border-b border-sm_grey-100'
         }
         title={'MECÁNICA AUTOMOTRIZ'}
         description={
@@ -291,7 +291,7 @@ const HomeClientView = () => {
           />
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

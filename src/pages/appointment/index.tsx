@@ -1,9 +1,15 @@
-import React from 'react'
+import AppointmentView from '@modules/Appointment/AppointmentView'
+import Head from 'next/head'
 
-type Props = {}
-
-const AppointmentPage = (props: Props) => {
-  return <div>AppointmentPage</div>
+const DataPage = () => {
+  return (
+    <>
+      <Head>
+        <title>AUTOPRO - CITA</title>
+      </Head>
+      <AppointmentView />
+    </>
+  )
 }
 
-export default AppointmentPage
+export default DataPage

@@ -6,15 +6,21 @@
   html {
     @apply scroll-smooth;
     @apply box-border;
-    @apply text-gray-100;
-    @apply bg-primary-700;
+    // @apply text-gray-100;
+    // @apply bg-primary-700;
+
     // @apply bg-gray-100;
     // @apply max-w-screen-2xl;
   }
 
   // TODO: nuevo
   h1 {
-    @apply font-bold text-2xl text-primary-800;
+    @apply font-bold text-2xl text-sm_primary-800;
+  }
+
+  li,
+  svg {
+    @apply cursor-pointer;
   }
 }
 
@@ -32,4 +38,8 @@
 
 .responsive-screen-gap {
   @apply gap-8 md:gap-14;
+}
+
+.container-section {
+  @apply container mx-auto px-2 2xl:px-40;
 }

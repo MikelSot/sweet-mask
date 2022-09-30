@@ -309,31 +309,31 @@ const itemsTaller = [
     id: 1,
     nombre: 'Mala - Cañete',
     image: '/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg',
-    link: '/nosotros/taller/mala-cañete'
+    link: '/about/workshop/mala-cañete'
   },
   {
     id: 2,
     nombre: 'Cerro Azul - Cañete',
     image: '/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg',
-    link: '/nosotros/taller/carroazul-cañete'
+    link: '/about/workshop/carroazul-cañete'
   },
   {
     id: 3,
     nombre: 'Quilmana - Cañete',
     image: '/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg',
-    link: '/nosotros/taller/quilmana-cañete'
+    link: '/about/workshop/quilmana-cañete'
   },
   {
     id: 4,
     nombre: 'Asia - Cañete',
     image: '/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg',
-    link: '/nosotros/taller/asia-cañete'
+    link: '/about/workshop/asia-cañete'
   },
   {
     id: 5,
     nombre: 'Imperial - Cañete',
     image: '/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg',
-    link: '/nosotros/taller/imperial-cañete'
+    link: '/about/workshop/imperial-cañete'
   }
 ]
 

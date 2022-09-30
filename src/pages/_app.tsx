@@ -2,7 +2,7 @@ import 'react-day-picker/lib/style.css'
 import '../../styles/styles.scss'
 
 import Spinner from '@components/atoms/spinner'
-import { Layout } from '@components/organisms/layout'
+import { Layout } from '@components/templates/layout'
 import { AppointmentProvider } from 'mock2/context/appointment.context'
 import { GraphicsAreaProvider } from 'mock2/context/graphicsArea.context'
 import { GraphicsColumnProvider } from 'mock2/context/graphicsColumn.context'

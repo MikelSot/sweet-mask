@@ -1,12 +1,14 @@
 import Footer from '@components/molecules/footer/Footer'
-import Header from '@components/molecules/header/Header'
+// import Header from '@components/molecules/header/Header'
 import HeaderUser from '@components/molecules/header/HeaderUser'
 import SidebarUser from '@components/molecules/sidebar/SidebarUser'
 import { useUser } from '@hooks/useUser'
 import Head from 'next/head'
 
+import Header from './components/Header'
+
 type LayoutProps = {
-  children: React.ReactNode
+  children: JSX.Element | JSX.Element[]
 }
 
 export const Layout = (props: LayoutProps) => {
