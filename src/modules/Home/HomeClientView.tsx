@@ -1,8 +1,7 @@
 import Banner from '@components/templates/banner'
-import Section from '@components/templates/section'
+import { OUR_SERVICES } from '@data/our-services.data'
 import { useServices } from 'mock2/context/service.context'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { useProducts } from './../../mock2/context/product.context'
 
@@ -143,152 +142,42 @@ const HomeClientView = () => {
         urlImage="/imagenes/inicio/banner/banner.png"
       />
 
-      {/* RECIBIR AUTOPRO */}
-      <Section
-        className={
-          'grid responsive-screen-gap responsive-screen-width responsive-screen-height bg-white text-primary-700'
-        }
-        title={'¿QUÉ VAS A RECIBIR DE AUTOPRO?'}
-        typeGallery={'galleryReceive'}
-        data={itemsReceiveFromCompany.slice(0, 5)}
-      />
-
-      {/* TODOS PRODUCTOS */}
-      <Section
-        className={
-          'bg-primary-200 text-primary-700 grid responsive-screen-height responsive-screen-gap'
-        }
-        title={'TODOS LOS PRODUCTOS QUE NECESITAS'}
-        description={'A precios accesibles y de alta calidad'}
-        typeGallery={'slider'}
-        data={newArrProduct}
-        itemButton={itemsButtonsSlidersProducts}
-      />
-
-      {/* SERVICIO OFRECE */}
-      <Section
-        className={
-          'grid responsive-screen-gap responsive-screen-width responsive-screen-height bg-white text-primary-700'
-        }
-        title={'¿QUÉ SERVICIOS OFRECEMOS?'}
-        description={'Contamos con excelentes profersionales'}
-        typeGallery={'galleryOffered'}
-        data={services.slice(0, 6)}
-        itemButton={itemsButtonsServicesOffered}
-      />
-
-      {/* SOBRE NOSOTROS */}
-      <Section
-        className={
-          'bg-primary-200 grid grid-cols-1 md:grid-cols-2 gap-5 responsive-screen-width responsive-screen-height text-primary-700'
-        }
-        title={'SOBRE NOSOTROS'}
-        description={
-          'Somos una empresa peruana dedicada al rubro automotriz. Nuestra misión es ofrecer los mejores productos y servicios a nuestros clientes, procurando tengan la mejor experiencia en todo momento...'
-        }
-        typeGallery={'gridAbout'}
-        data={itemsAbout}
-        itemButton={itemsButtonsAbout}
-      />
-
-      {/* NUESTROS PROVEEDORES */}
-      <Section
-        className={'bg-white text-primary-700 grid responsive-screen-height responsive-screen-gap'}
-        title={'NUESTROS PROVEEDORES'}
-        typeGallery={'slider'}
-        data={itemsSlidersSuppliers}
-      />
-
-      {/* NUESTROS CLIENTES */}
-      <section className="bg-white py-14">
-        <section className="py-20 bg-gradient-to-tr from-primary-600 to-primary-800 -skew-y-[4deg] text-gray-100 responsive-screen-width responsive-screen-height">
-          <div className="skew-y-[4deg] grid responsive-screen-gap">
-            <h2 className="text-xl font-bold text-center text-gray-100">NUESTROS CLIENTES</h2>
-            <section className="w-full overflow-hidden blue-300">
-              <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-                  <div className="col-span-12 md:col-span-3 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-1.jpg"
-                    />
-                  </div>
-                  <div className="col-span-12 md:col-span-2 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-2.jpg"
-                    />
-                  </div>
-                  <div className="col-span-12 md:col-span-4 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-3.jpg"
-                    />
-                  </div>
-                  <div className="col-span-12 md:col-span-3 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-4.webp"
-                    />
-                  </div>
-                  <div className="col-span-12 md:col-span-5 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-5.jpg"
-                    />
-                  </div>
-                  <div className="col-span-12 md:col-span-3 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-6.jpg"
-                    />
-                  </div>
-                  <div className="col-span-12 md:col-span-4 h-52 rounded-2xl border border-gray-300 overflow-hidden">
-                    <img
-                      alt="gallery"
-                      className="block object-cover object-center w-full h-full transition-scale duration-500 hover:scale-[1.1]"
-                      src="/images/home/servicio-6.jpg"
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
+      {/* NUESTROS SERVICIOS */}
+      <section className="padding-vertical-section">
+        <div className="container-section">
+          <h2 className="text-xl font-bold text-center">NUESTROS SERVICIOS</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            {OUR_SERVICES.map(service => {
+              const { id, name, description, icon } = service
+              return (
+                <article key={id} className="card">
+                  <div className="w-12 m-auto">{icon}</div>
+                  <p className="title">{name}</p>
+                  <p className="description">{description}</p>
+                </article>
+              )
+            })}
           </div>
-        </section>
-      </section>
-      {/* RESERVAR CITA */}
-      <section className="py-40 grid responsive-screen-gap responsive-screen-width responsive-screen-height bg-white text-primary-700">
-        <div className="w-full m-auto grid gap-2">
-          <h2 className="text-xl font-bold text-center">¿QUIERES RESERVAR UNA CITA?</h2>
-          <p className="text-center">
-            Puedes reservar una cita para tu atención y así ahorres tiempo
-          </p>
         </div>
-        <Link href="/cita">
-          <a
-            className={`w-max m-auto text-gray-100 bg-primary-700 hover:bg-primary-800 rounded-md px-8 py-2 text-center
-            `}
-          >
-            Reservar cita
-          </a>
-        </Link>
       </section>
+
       {/* UBICACION */}
-      <section className="bg-primary-200 text-primary-700 grid responsive-screen-gap responsive-screen-width responsive-screen-height">
+      <section className="text-primary-700 grid container-section padding-vertical-section">
         <h2 className="text-xl font-bold text-center">NUESTRA UBICACIÓN</h2>
         <div className="w-full h-60 md:h-96 relative rounded-2xl overflow-hidden">
-          <Image
+          {/* <Image
             src={'/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg'}
             alt="imagen logo"
             layout="fill"
             objectFit="cover" //cover
-          />
+          /> */}
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3892.851412079641!2d-76.632333!3d-12.6577457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910565505464808d%3A0x1616afb9406b3a35!2sPlaza%20de%20Armas%20de%20Mala!5e0!3m2!1ses!2spe!4v1664847330844!5m2!1ses!2spe"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full"
+          ></iframe>
         </div>
       </section>
     </div>

@@ -26,17 +26,14 @@ const index = (props: Props) => {
             <p className="text-center text-sm_grey-500 lg:text-start md:text-lg lg:text-xl lg:leading-8">
               {props.description}
             </p>
-            <div className="flex gap-12 justify-center lg:justify-start">
+            <div className="flex gap-12 justify-center items-center lg:justify-start">
               {props.buttons?.map(item => {
                 const { id, name, typeButton, url } = item
                 return (
                   <Link key={id} href={url}>
                     <a
-                      type="button"
-                      className={`h-12 rounded-md px-4 grid place-items-center transition-colors duration-300 ${
-                        typeButton !== 'primary'
-                          ? 'text-sm_primary-700 border border-sm_primary-700'
-                          : 'text-sm_grey-600 bg-sm_primary-700'
+                      className={`button ${
+                        typeButton !== 'primary' ? 'button-primary' : 'button-secondary'
                       }
 `}
                     >

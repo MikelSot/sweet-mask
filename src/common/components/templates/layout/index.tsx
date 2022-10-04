@@ -21,9 +21,15 @@ export const Layout = (props: LayoutProps) => {
       </Head>
       {!isUserLogin ? (
         <>
-          <Header />
-          <main>{props.children}</main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <div className="h-max">
+              <Header />
+            </div>
+            <main className="grow">{props.children}</main>
+            <div className="h-max">
+              <Footer />
+            </div>
+          </div>
         </>
       ) : (
         <>

@@ -25,6 +25,9 @@
       "@components/*": [
         "common/components/*"
       ],
+      "@data/*": [
+        "common/data/*"
+      ],
       "@atoms/*": [
         "common/components/atoms/*"
       ],

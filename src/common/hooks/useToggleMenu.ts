@@ -1,9 +1,11 @@
 import { useState } from 'react'
 
 export const useToggleMenu = () => {
-  const [isToggle, setIsToggle] = useState(false)
+  const [isToggleMenu, setIsToggleMenu] = useState(false)
 
-  const handleToggleMenu = () => setIsToggle(!isToggle)
+  const handleToggleMenu = () => {
+    setIsToggleMenu(!isToggleMenu)
+  }
 
-  return { isToggle, handleToggleMenu }
+  return { isToggleMenu, handleToggleMenu }
 }

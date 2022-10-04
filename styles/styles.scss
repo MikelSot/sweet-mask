@@ -6,40 +6,84 @@
   html {
     @apply scroll-smooth;
     @apply box-border;
-    // @apply text-gray-100;
-    // @apply bg-primary-700;
-
-    // @apply bg-gray-100;
-    // @apply max-w-screen-2xl;
   }
 
   // TODO: nuevo
+  h1,
+  h2 {
+    @apply text-sm_primary-800;
+  }
+
   h1 {
-    @apply font-bold text-2xl text-sm_primary-800;
+    @apply font-bold text-2xl;
+  }
+  h2 {
+    @apply mb-8 lg:mb-12;
   }
 
   li,
   svg {
     @apply cursor-pointer;
   }
+
+  svg {
+    @apply w-full block fill-current;
+  }
 }
 
-.responsive-screen-width {
-  @apply px-4 md:px-12 lg:px-28 xl:px-60;
-}
+@layer components {
+  // .responsive-screen-width {
+  //   @apply px-4 md:px-12 lg:px-28 xl:px-60;
+  // }
 
-.responsive-screen-height {
-  @apply py-10 md:py-20 lg:py-20 xl:py-20;
-}
+  // .responsive-screen-height {
+  //   @apply py-10 md:py-20 lg:py-20 xl:py-20;
+  // }
 
-.responsive-screen-height-user {
-  @apply pb-10 md:pb-20 lg:pb-20 xl:pb-20;
-}
+  // .responsive-screen-height-user {
+  //   @apply pb-10 md:pb-20 lg:pb-20 xl:pb-20;
+  // }
 
-.responsive-screen-gap {
-  @apply gap-8 md:gap-14;
-}
+  // .responsive-screen-gap {
+  //   @apply gap-8 md:gap-14;
+  // }
 
-.container-section {
-  @apply container mx-auto px-2 2xl:px-40;
+  .container-section {
+    @apply container mx-auto px-2 2xl:px-40;
+  }
+
+  .padding-vertical-section {
+    @apply my-12 lg:my-20;
+  }
+
+  .button {
+    @apply rounded-md px-4 py-2 place-items-center transition-colors duration-300 hidden md:block;
+
+    &-primary {
+      @apply text-sm_primary-700 border border-sm_primary-700 hover:bg-sm_primary-100/[0.9];
+    }
+    &-secondary {
+      @apply text-sm_grey-600 bg-sm_primary-700 hover:bg-sm_primary-800/[0.9];
+    }
+  }
+
+  .card {
+    @apply p-4 bg-white border border-sm_grey-100 rounded-lg text-center grid gap-6 lg:p-6;
+
+    svg {
+      @apply text-sm_primary-700 cursor-default;
+    }
+  }
+
+  .title {
+    @apply font-bold text-sm_primary-800;
+  }
+
+  .description {
+    @apply text-sm_grey-500;
+  }
+
+  .footer {
+    @apply py-12 lg:py-16;
+  }
 }
