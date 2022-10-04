@@ -1,5 +1,6 @@
 import 'react-day-picker/lib/style.css'
 import '../../styles/styles.scss'
+import 'react-alice-carousel/lib/alice-carousel.css'
 
 import Spinner from '@components/atoms/spinner'
 import { Layout } from '@components/templates/layout'

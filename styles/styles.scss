@@ -18,7 +18,7 @@
     @apply font-bold text-2xl;
   }
   h2 {
-    @apply mb-8 lg:mb-12;
+    @apply mb-8 lg:mb-16;
   }
 
   li,
@@ -28,6 +28,10 @@
 
   svg {
     @apply w-full block fill-current;
+  }
+
+  img {
+    @apply object-contain block;
   }
 }
 
@@ -53,7 +57,7 @@
   }
 
   .padding-vertical-section {
-    @apply my-12 lg:my-20;
+    @apply my-12 lg:my-32;
   }
 
   .button {
@@ -70,8 +74,16 @@
   .card {
     @apply p-4 bg-white border border-sm_grey-100 rounded-lg text-center grid gap-6 lg:p-6;
 
+    &-product {
+      @apply p-0 gap-0 text-left;
+    }
+
+    &-body {
+      @apply p-1 lg:p-6;
+    }
+
     svg {
-      @apply text-sm_primary-700 cursor-default;
+      @apply text-sm_primary-700;
     }
   }
 

@@ -1,4 +1,7 @@
+import Carousel from '@components/organisms/Carousel'
+import { ICONS } from '@components/svg/icons'
 import Banner from '@components/templates/banner'
+import { OUR_PRODUCTS } from '@data/our-products.data'
 import { OUR_SERVICES } from '@data/our-services.data'
 import { useServices } from 'mock2/context/service.context'
 import Image from 'next/image'
@@ -158,6 +161,49 @@ const HomeClientView = () => {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* NUESTROS PRODUCTOS */}
+
+      <section className="padding-vertical-section">
+        <div className="container-section">
+          <h2 className="text-xl font-bold text-center">NUESTROS PRODUCTOS</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            {OUR_PRODUCTS.map(product => {
+              const { id, name, price, image } = product
+              return (
+                <article key={id} className="card card-product">
+                  <Image
+                    blurDataURL={image}
+                    src={image}
+                    alt="Picture of the author"
+                    width={500}
+                    height={250}
+                    className="bg-sm_grey-100"
+                  />
+                  <div className="card-body flex flex-col gap-4">
+                    <p className="title line-clamp-1">{name}</p>
+                    <div className="flex justify-between items-center">
+                      <span>{`S/. ${price.toFixed(2)}`}</span>
+                      <div className="w-11 py-2 px-3 bg-sm_grey-100 rounded-lg cursor-pointer">
+                        {ICONS['cart']}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* PRUEBA */}
+
+      <section className="padding-vertical-section">
+        <div className="container-section">
+          <h2 className="text-xl font-bold text-center">NUESTROS PRODUCTOS</h2>
+          <Carousel OUR_PRODUCTS={OUR_PRODUCTS} icon={ICONS['cart']} />
         </div>
       </section>
 
