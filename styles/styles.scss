@@ -61,7 +61,11 @@
   }
 
   .button {
-    @apply rounded-md px-4 py-2 place-items-center transition-colors duration-300 hidden md:block;
+    @apply rounded-md px-4 py-2 place-items-center transition-colors duration-300;
+
+    &-hidden {
+      @apply hidden md:block cursor-pointer;
+    }
 
     &-primary {
       @apply text-sm_primary-700 border border-sm_primary-700 hover:bg-sm_primary-100/[0.9];

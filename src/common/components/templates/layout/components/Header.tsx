@@ -36,7 +36,9 @@ const OptionsHeader = ({ handleToggleMenu }: any) => {
           <button
             key={id}
             type="button"
-            className={`button ${type !== 'primary' ? 'button-primary' : 'button-secondary'}
+            className={`button button-hidden ${
+              type !== 'primary' ? 'button-primary' : 'button-secondary'
+            }
 `}
           >
             {label}

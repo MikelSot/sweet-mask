@@ -5,6 +5,7 @@ import { OUR_PRODUCTS } from '@data/our-products.data'
 import { OUR_SERVICES } from '@data/our-services.data'
 import { useServices } from 'mock2/context/service.context'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { useProducts } from './../../mock2/context/product.context'
 
@@ -169,41 +170,20 @@ const HomeClientView = () => {
       <section className="padding-vertical-section">
         <div className="container-section">
           <h2 className="text-xl font-bold text-center">NUESTROS PRODUCTOS</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-            {OUR_PRODUCTS.map(product => {
-              const { id, name, price, image } = product
-              return (
-                <article key={id} className="card card-product">
-                  <Image
-                    blurDataURL={image}
-                    src={image}
-                    alt="Picture of the author"
-                    width={500}
-                    height={250}
-                    className="bg-sm_grey-100"
-                  />
-                  <div className="card-body flex flex-col gap-4">
-                    <p className="title line-clamp-1">{name}</p>
-                    <div className="flex justify-between items-center">
-                      <span>{`S/. ${price.toFixed(2)}`}</span>
-                      <div className="w-11 py-2 px-3 bg-sm_grey-100 rounded-lg cursor-pointer">
-                        {ICONS['cart']}
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
+          <Carousel OUR_PRODUCTS={OUR_PRODUCTS} icon={ICONS['cart']} />
         </div>
       </section>
 
-      {/* PRUEBA */}
-
-      <section className="padding-vertical-section">
-        <div className="container-section">
-          <h2 className="text-xl font-bold text-center">NUESTROS PRODUCTOS</h2>
-          <Carousel OUR_PRODUCTS={OUR_PRODUCTS} icon={ICONS['cart']} />
+      {/* RESERVAR CITA */}
+      <section className="container-section">
+        <div className="bg-gray-200 text-primary-700 py-32 lg:py-40 rounded-lg text-center flex flex-col gap-8 lg:gap-12 px-2 lg:px-8">
+          <h2 className="mb-0 font-bold lg:text-3xl">¿QUIERES RESERVAR UNA CITA?</h2>
+          <p className="lg:text-lg">
+            Puedes recibir el servicio que necesites, en el lugar en el que te encuentres
+          </p>
+          <Link href="/cita">
+            <span className="button button-secondary w-max m-auto">Reservar cita </span>
+          </Link>
         </div>
       </section>
 
@@ -211,13 +191,6 @@ const HomeClientView = () => {
       <section className="text-primary-700 grid container-section padding-vertical-section">
         <h2 className="text-xl font-bold text-center">NUESTRA UBICACIÓN</h2>
         <div className="w-full h-60 md:h-96 relative rounded-2xl overflow-hidden">
-          {/* <Image
-            src={'/imagenes/inicio/nuestra-ubicacion/google-mapa.jpg'}
-            alt="imagen logo"
-            layout="fill"
-            objectFit="cover" //cover
-          /> */}
-
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3892.851412079641!2d-76.632333!3d-12.6577457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910565505464808d%3A0x1616afb9406b3a35!2sPlaza%20de%20Armas%20de%20Mala!5e0!3m2!1ses!2spe!4v1664847330844!5m2!1ses!2spe"
             loading="lazy"

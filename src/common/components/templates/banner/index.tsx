@@ -26,7 +26,7 @@ const index = (props: Props) => {
             <p className="text-center text-sm_grey-500 lg:text-start md:text-lg lg:text-xl lg:leading-8">
               {props.description}
             </p>
-            <div className="flex gap-12 justify-center items-center lg:justify-start">
+            <div className="flex flex-col gap-12 justify-center items-center sm:flex-row lg:justify-start">
               {props.buttons?.map(item => {
                 const { id, name, typeButton, url } = item
                 return (
